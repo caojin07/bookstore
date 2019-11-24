@@ -3,15 +3,16 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+<properties resource="db.properties"/>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC" />
             <!-- 配置数据库连接信息 -->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:3306/bookstore" />
-                <property name="username" value="paris" />
-                <property name="password" value="123456" />
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${db_url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
             </dataSource>
         </environment>
     </environments>
